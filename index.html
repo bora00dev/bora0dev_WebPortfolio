@@ -1,115 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>bora0dev — Wavebreaker</title>
-  <meta name="description" content="Play Wavebreaker by bora0dev on itch.io. Minimal site with a clean embed and quick links." />
-  <meta property="og:title" content="Wavebreaker — by bora0dev" />
-  <meta property="og:description" content="A fast, arcade-style web game. Play it on itch.io." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="bora0devlogo1.png" />
-  <link rel="icon" href="bora0devlogo1.png" />
+  <meta name="description" content="Play Wavebreaker by bora0dev on itch.io.">
+  <link rel="icon" href="bora0devlogo1.png" type="image/png">
+
   <style>
-    :root {
-      --bg: #0b0b0b;
-      --fg: #f6f7f9;
-      --muted: #b3bac4;
-      --link: #7aa2ff;
-      --card: #111418;
-      --border: #232831;
-      --shadow: 0 2px 20px rgba(0,0,0,.35);
-      --accent: #4f7cff;
-    }
-
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
     body {
-      margin: 0; background: radial-gradient(1200px 700px at 10% -10%, #132038, transparent 60%), var(--bg);
-      color: var(--fg);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #0b0b0b;
+      color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
     }
 
-    .container { max-width: 1100px; margin: 0 auto; padding: 28px 20px 80px; }
-    header { text-align: center; }
-    header img.logo { width: 120px; height: auto; border-radius: 50%; margin-bottom: 12px; }
-    header h1 { font-size: clamp(36px, 7vw, 72px); line-height: 1.05; margin: 0; }
-    header p { color: var(--muted); margin: 12px auto 8px; max-width: 720px; font-size: clamp(16px, 2.4vw, 20px); }
-
-    .links { margin: 10px 0 30px; font-size: 18px; }
-    .links a { color: var(--link); text-decoration: none; }
-    .links a:hover { text-decoration: underline; }
-
-    .card { border: 1px solid var(--border); background: var(--card); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
-    .pad { padding: 16px; }
-
-    .thumb {
-      width: 100%; height: auto; display: block; object-fit: cover; background: linear-gradient(135deg, #1d2b47, #0f172a);
+    img.logo {
+      width: 140px;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 20px;
     }
 
-    .cta {
-      display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      padding: 10px 14px; border-radius: 10px; text-decoration: none; color: var(--fg); font-weight: 600;
-    }
-    .cta:hover { border-color: #3b4657; }
-
-    .embed-wrap { margin-top: 14px; }
-    iframe.game {
-      width: 100%; height: 680px; border: none; border-radius: 10px; background: #000;
+    h1 {
+      font-size: 2.5rem;
+      margin: 0 0 10px;
     }
 
-    footer { margin-top: 48px; text-align: center; opacity: .7; font-size: 14px; }
-    .note { color: var(--muted); font-size: 14px; margin-top: 10px; }
+    p {
+      font-size: 1.1rem;
+      color: #bbb;
+      margin-bottom: 30px;
+    }
 
-    @media (max-width: 720px) {
-      iframe.game { height: 560px; }
+    a.play-link {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(90deg, #007bff, #0056d6);
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: transform 0.15s ease, background 0.3s ease;
+    }
+
+    a.play-link:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #3399ff, #007bff);
+    }
+
+    img.gif {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      border-radius: 12px;
+      margin-top: 25px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+
+    img.gif:hover {
+      transform: scale(1.02);
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      opacity: 0.6;
     }
   </style>
 </head>
+
 <body>
-  <main class="container">
-    <header>
-      <img src="bora0devlogo1.png" alt="bora0dev logo" class="logo" />
-      <h1>bora0dev</h1>
-      <p>Indie web game developer. Play <strong>Wavebreaker</strong> below or on itch.io.</p>
-      <p class="links">
-        <a href="https://bora0dev.itch.io" target="_blank" rel="noreferrer">itch.io profile</a>
-        ·
-        <a href="https://bora0dev.itch.io/wavebreaker" target="_blank" rel="noreferrer">Wavebreaker page</a>
-      </p>
-    </header>
+  <img src="bora0devlogo1.png" alt="bora0dev logo" class="logo">
+  <h1>bora0dev</h1>
+  <p>Indie web game developer — check out my latest game below!</p>
 
-    <section aria-labelledby="game-title">
-      <h2 id="game-title" style="margin:0 0 12px;">Wavebreaker</h2>
-      <div class="card">
-        <img class="thumb" src="Wavebreaker.gif" alt="Wavebreaker gameplay GIF" />
-        <div class="pad">
-          <p style="margin:0 0 12px; color: var(--muted);">Fast, skill-based arcade action in the browser.</p>
-          <a class="cta" href="https://bora0dev.itch.io/wavebreaker" target="_blank" rel="noreferrer">▶ Play on itch.io</a>
-          <div class="embed-wrap">
-            <iframe
-              class="game"
-              title="Wavebreaker — itch.io"
-              src="https://bora0dev.itch.io/wavebreaker"
-              allowfullscreen
-              loading="lazy">
-            </iframe>
-            <p class="note">If the embed doesn't load, <a href="https://bora0dev.itch.io/wavebreaker" target="_blank" rel="noreferrer">open the game directly on itch.io</a>.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+  <a href="https://bora0dev.itch.io/wavebreaker" target="_blank" class="play-link">▶ Play Wavebreaker on itch.io</a>
 
-    <footer>
-      <p>© <span id="year"></span> bora0dev. Hosted on GitHub Pages.</p>
-    </footer>
-  </main>
+  <a href="https://bora0dev.itch.io/wavebreaker" target="_blank">
+    <img src="Wavebreaker.gif" alt="Wavebreaker gameplay preview" class="gif">
+  </a>
+
+  <footer>© <span id="year"></span> bora0dev · Hosted on GitHub Pages</footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
