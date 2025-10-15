@@ -8,8 +8,8 @@
   <meta property="og:title" content="Wavebreaker — by bora0dev" />
   <meta property="og:description" content="A fast, arcade-style web game. Play it on itch.io." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/og-image.png" />
-  <link rel="icon" href="/favicon.ico" />
+  <meta property="og:image" content="bora0devlogo1.png" />
+  <link rel="icon" href="bora0devlogo1.png" />
   <style>
     :root {
       --bg: #0b0b0b;
@@ -34,6 +34,7 @@
 
     .container { max-width: 1100px; margin: 0 auto; padding: 28px 20px 80px; }
     header { text-align: center; }
+    header img.logo { width: 120px; height: auto; border-radius: 50%; margin-bottom: 12px; }
     header h1 { font-size: clamp(36px, 7vw, 72px); line-height: 1.05; margin: 0; }
     header p { color: var(--muted); margin: 12px auto 8px; max-width: 720px; font-size: clamp(16px, 2.4vw, 20px); }
 
@@ -45,11 +46,8 @@
     .pad { padding: 16px; }
 
     .thumb {
-      width: 100%; height: 260px; display: block; object-fit: cover; background: linear-gradient(135deg, #1d2b47, #0f172a);
+      width: 100%; height: auto; display: block; object-fit: cover; background: linear-gradient(135deg, #1d2b47, #0f172a);
     }
-
-    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
-    .col-12 { grid-column: span 12; }
 
     .cta {
       display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--border);
@@ -67,7 +65,6 @@
     .note { color: var(--muted); font-size: 14px; margin-top: 10px; }
 
     @media (max-width: 720px) {
-      .thumb { height: 200px; }
       iframe.game { height: 560px; }
     }
   </style>
@@ -75,6 +72,7 @@
 <body>
   <main class="container">
     <header>
+      <img src="bora0devlogo1.png" alt="bora0dev logo" class="logo" />
       <h1>bora0dev</h1>
       <p>Indie web game developer. Play <strong>Wavebreaker</strong> below or on itch.io.</p>
       <p class="links">
@@ -87,13 +85,11 @@
     <section aria-labelledby="game-title">
       <h2 id="game-title" style="margin:0 0 12px;">Wavebreaker</h2>
       <div class="card">
-        <img class="thumb" src="assets/wavebreaker-cover.jpg" alt="Wavebreaker cover art (placeholder)" />
+        <img class="thumb" src="Wavebreaker.gif" alt="Wavebreaker gameplay GIF" />
         <div class="pad">
           <p style="margin:0 0 12px; color: var(--muted);">Fast, skill-based arcade action in the browser.</p>
           <a class="cta" href="https://bora0dev.itch.io/wavebreaker" target="_blank" rel="noreferrer">▶ Play on itch.io</a>
           <div class="embed-wrap">
-            <!-- Attempt to embed the itch.io page. Some browsers or itch.io settings may block embedding in an iframe.
-                 If you see an error or a blank area here, just use the Play button above. -->
             <iframe
               class="game"
               title="Wavebreaker — itch.io"
